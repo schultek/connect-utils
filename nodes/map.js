@@ -38,7 +38,7 @@ platform.core.node({
 
     for (let i = 0; i < inputs.array.length; i++) {
 
-      let params = {i, index: i, length: inputs.array.length, item: inputs.array[i], array: inputs.array}
+      let params = {i, index: i, length: inputs.array.length, item: inputs.array[i], array: inputs.array, ...inputs.array[i]}
       for (let input of signature.inputs) {
         if (!(input in params))
         params[input] = undefined;

@@ -11,7 +11,7 @@ platform.core.node({
     method: 'GET',
     inputs: ['channel', 'path'],
     outputs: [],
-    controlOutputs: ['listening', 'non_existent_path'],
+    controlOutputs: ['done', 'non_existent_path'],
     hints: {
       node: 'attaches the given node as a listener to an event channel',
       inputs: {
@@ -21,7 +21,7 @@ platform.core.node({
       outputs: {},
       controlOutputs: {
         non_existent_path: "the given path does not exist",
-        listening: "the listener was set up successfully"
+        done: "the listener was set up successfully"
       }
     }
   },
@@ -48,7 +48,7 @@ platform.core.node({
         .then(result => publish(inputs.channel+"#response#"+msgId, {response: result.data}))
         .catch(err => console.log(err))
     })
-    .then(() => control("listening"))
+    .then(() => control("done"))
     .catch(err => error(err))
 
   }
