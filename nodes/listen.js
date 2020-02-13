@@ -1,6 +1,6 @@
 const platform = require('connect-platform');
 
-const { subscribe } = require("../lib/pubsub-redis")
+const { subscribe, publish } = require("../lib/pubsub-redis")
 
 /**
  * Concept node for event emitters and listeners.
@@ -35,7 +35,7 @@ platform.core.node({
     let signature = platform.core.registry.signature(inputs.path)
     let callable = platform.core.callable(() => platform.core.registry.instance(inputs.path), context)
 
-    subscribe(inputs.channel, (data) => {
+    subscribe(inputs.channel, ({msgId, data}) => {
 
       let params = {data}
       
@@ -45,6 +45,8 @@ platform.core.node({
       }
   
       callable(params)
+        .then(result => publish(inputs.channel+"#response#"+msgId, {response: result.data}))
+        .catch(err => console.log(err))
     })
     .then(() => control("listening"))
     .catch(err => error(err))
