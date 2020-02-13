@@ -35,9 +35,9 @@ platform.core.node({
     let signature = platform.core.registry.signature(inputs.path)
     let callable = platform.core.callable(() => platform.core.registry.instance(inputs.path), context)
 
-    subscribe(inputs.channel, (event) => {
+    subscribe(inputs.channel, (data) => {
 
-      let params = {event, e: event, message: event}
+      let params = {data}
       
       for (let input of signature.inputs) {
         if (!(input in params))
