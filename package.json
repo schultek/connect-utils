@@ -1,0 +1,30 @@
+{
+  "name": "connect-utils",
+  "version": "0.1.0",
+  "description": "Utility nodes for connect platform",
+  "main": ".",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/schultek/connect-utils.git"
+  },
+  "author": "Kilian Schulte <kilian@4xschulte.de>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/schultek/connect-utils/issues"
+  },
+  "homepage": "https://github.com/schultek/connect-utils#readme",
+  "peerDependencies": {
+    "connect-platform": "*"
+  },
+  "devDependencies": {
+    "connect-platform": "^0.2.17",
+    "nodemon": "^1.18.4"
+  },
+  "dependencies": {
+    "node-redis-pubsub": "^4.0.0"
+  }
+}
