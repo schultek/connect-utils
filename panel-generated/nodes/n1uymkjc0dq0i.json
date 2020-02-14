@@ -1,0 +1,67 @@
+{
+  "path": "/repeat-demo",
+  "method": "GET",
+  "public": false,
+  "in": [
+    "n"
+  ],
+  "out": [
+    "results"
+  ],
+  "configs": [],
+  "control": [],
+  "nodes": [
+    {
+      "tag": "c0",
+      "box": {
+        "left": 663,
+        "right": 905,
+        "top": 216,
+        "bottom": 372
+      },
+      "path": "/utils/repeat"
+    },
+    {
+      "tag": "v0",
+      "box": {
+        "left": 351,
+        "right": 523,
+        "top": 270,
+        "bottom": 270
+      },
+      "expr": "\"/func/repeatable2\""
+    }
+  ],
+  "links": [
+    [
+      {
+        "in": "n"
+      },
+      {
+        "c0": {
+          "in": "n"
+        }
+      }
+    ],
+    [
+      {
+        "v0": "result"
+      },
+      {
+        "c0": {
+          "in": "path"
+        }
+      }
+    ],
+    [
+      {
+        "c0": {
+          "out": "results"
+        }
+      },
+      {
+        "out": "results"
+      }
+    ]
+  ]
+}

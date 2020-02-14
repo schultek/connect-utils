@@ -1,0 +1,48 @@
+{
+  "path": "/func/repeatable",
+  "method": "GET",
+  "public": false,
+  "in": [
+    "i"
+  ],
+  "out": [
+    "result"
+  ],
+  "configs": [],
+  "control": [],
+  "nodes": [
+    {
+      "tag": "e0",
+      "box": {
+        "left": 728,
+        "right": 900,
+        "top": 308,
+        "bottom": 386
+      },
+      "in": [
+        "i"
+      ],
+      "expr": "i*2"
+    }
+  ],
+  "links": [
+    [
+      {
+        "in": "i"
+      },
+      {
+        "e0": {
+          "in": "i"
+        }
+      }
+    ],
+    [
+      {
+        "e0": "result"
+      },
+      {
+        "out": "result"
+      }
+    ]
+  ]
+}

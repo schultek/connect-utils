@@ -1,0 +1,75 @@
+{
+  "path": "/map-demo",
+  "method": "GET",
+  "public": false,
+  "in": [],
+  "out": [
+    "results"
+  ],
+  "configs": [],
+  "control": [],
+  "nodes": [
+    {
+      "tag": "v0",
+      "box": {
+        "left": 233,
+        "right": 405,
+        "top": 300,
+        "bottom": 300
+      },
+      "expr": "[1, 4, 20, 15, 6]"
+    },
+    {
+      "tag": "c0",
+      "box": {
+        "left": 550,
+        "right": 792,
+        "top": 323,
+        "bottom": 479
+      },
+      "path": "/utils/map"
+    },
+    {
+      "tag": "v1",
+      "box": {
+        "left": 230,
+        "right": 402,
+        "top": 385,
+        "bottom": 385
+      },
+      "expr": "\"/func/mapable\""
+    }
+  ],
+  "links": [
+    [
+      {
+        "v0": "result"
+      },
+      {
+        "c0": {
+          "in": "array"
+        }
+      }
+    ],
+    [
+      {
+        "v1": "result"
+      },
+      {
+        "c0": {
+          "in": "path"
+        }
+      }
+    ],
+    [
+      {
+        "c0": {
+          "out": "results"
+        }
+      },
+      {
+        "out": "results"
+      }
+    ]
+  ]
+}

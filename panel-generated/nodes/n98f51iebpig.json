@@ -1,0 +1,49 @@
+{
+  "path": "/func/mapable",
+  "method": "GET",
+  "public": false,
+  "in": [
+    "item",
+    "index"
+  ],
+  "out": [
+    "result"
+  ],
+  "configs": [],
+  "control": [],
+  "nodes": [
+    {
+      "tag": "e0",
+      "box": {
+        "left": 650,
+        "right": 822,
+        "top": 318,
+        "bottom": 396
+      },
+      "in": [
+        "item"
+      ],
+      "expr": "item*2"
+    }
+  ],
+  "links": [
+    [
+      {
+        "in": "item"
+      },
+      {
+        "e0": {
+          "in": "item"
+        }
+      }
+    ],
+    [
+      {
+        "e0": "result"
+      },
+      {
+        "out": "result"
+      }
+    ]
+  ]
+}

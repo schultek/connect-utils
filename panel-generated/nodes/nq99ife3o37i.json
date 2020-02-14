@@ -1,0 +1,254 @@
+{
+  "path": "/map-using-iterate",
+  "method": "GET",
+  "public": false,
+  "in": [
+    "n"
+  ],
+  "out": [
+    "results"
+  ],
+  "configs": [],
+  "control": [],
+  "nodes": [
+    {
+      "tag": "e3",
+      "box": {
+        "left": 703,
+        "right": 875,
+        "top": 333,
+        "bottom": 411
+      },
+      "in": [
+        "step"
+      ],
+      "expr": "step.index"
+    },
+    {
+      "tag": "c0",
+      "box": {
+        "left": 362,
+        "right": 604,
+        "top": 399,
+        "bottom": 529
+      },
+      "path": "#iterate"
+    },
+    {
+      "tag": "e1",
+      "box": {
+        "left": 205,
+        "right": 377,
+        "top": 125,
+        "bottom": 203
+      },
+      "in": [
+        "n"
+      ],
+      "expr": "new Array(n)"
+    },
+    {
+      "tag": "e2",
+      "box": {
+        "left": 461,
+        "right": 633,
+        "top": 273,
+        "bottom": 401
+      },
+      "in": [
+        "step"
+      ],
+      "expr": "() => {\n  console.log(\"STEP\", step)\n  return step;\n}"
+    },
+    {
+      "tag": "e0",
+      "box": {
+        "left": 249,
+        "right": 421,
+        "top": 600,
+        "bottom": 678
+      },
+      "in": [
+        "target"
+      ],
+      "expr": "target"
+    },
+    {
+      "tag": "e4",
+      "box": {
+        "left": 697,
+        "right": 869,
+        "top": 223,
+        "bottom": 301
+      },
+      "in": [
+        "step"
+      ],
+      "expr": "step.item"
+    },
+    {
+      "tag": "e5",
+      "box": {
+        "left": 951,
+        "right": 1123,
+        "top": 303,
+        "bottom": 407
+      },
+      "in": [
+        "item",
+        "index"
+      ],
+      "expr": "index*2"
+    },
+    {
+      "tag": "e6",
+      "box": {
+        "left": 1186,
+        "right": 1358,
+        "top": 428,
+        "bottom": 532
+      },
+      "in": [
+        "mapped",
+        "step"
+      ],
+      "expr": "step.target[step.index] = mapped"
+    }
+  ],
+  "links": [
+    [
+      {
+        "in": "n"
+      },
+      {
+        "e1": {
+          "in": "n"
+        }
+      }
+    ],
+    [
+      {
+        "e1": "result"
+      },
+      {
+        "c0": {
+          "in": "target"
+        }
+      }
+    ],
+    [
+      {
+        "c0": {
+          "out": "step"
+        }
+      },
+      {
+        "e2": {
+          "in": "step"
+        }
+      }
+    ],
+    [
+      {
+        "e2": "result"
+      },
+      {
+        "c0": {
+          "in": "target"
+        }
+      }
+    ],
+    [
+      {
+        "c0": {
+          "out": "step"
+        }
+      },
+      {
+        "e3": {
+          "in": "step"
+        }
+      }
+    ],
+    [
+      {
+        "e0": "result"
+      },
+      {
+        "out": "results"
+      }
+    ],
+    [
+      {
+        "e1": "result"
+      },
+      {
+        "e0": {
+          "in": "target"
+        }
+      }
+    ],
+    [
+      {
+        "c0": {
+          "control": "finished"
+        }
+      },
+      "e0"
+    ],
+    [
+      {
+        "e4": "result"
+      },
+      {
+        "e5": {
+          "in": "item"
+        }
+      }
+    ],
+    [
+      {
+        "e3": "result"
+      },
+      {
+        "e5": {
+          "in": "index"
+        }
+      }
+    ],
+    [
+      {
+        "c0": {
+          "out": "step"
+        }
+      },
+      {
+        "e4": {
+          "in": "step"
+        }
+      }
+    ],
+    [
+      {
+        "c0": {
+          "out": "step"
+        }
+      },
+      {
+        "e6": {
+          "in": "step"
+        }
+      }
+    ],
+    [
+      {
+        "e5": "result"
+      },
+      {
+        "e6": {
+          "in": "mapped"
+        }
+      }
+    ]
+  ]
+}

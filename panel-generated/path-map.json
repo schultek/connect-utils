@@ -1,0 +1,21 @@
+{
+  "/samples/fib": "nrqnv2c92kh9",
+  "/samples/f-n-f": "nfhbhymn10wp",
+  "/samples/hello": "n6t3wy358ij7",
+  "/samples/fact": "nuvqup9jpy1i",
+  "/map-using-iterate": "nq99ife3o37i",
+  "/reduce-fact": "nn4r8j4o6u6l",
+  "/func/repeatable": "nyusfe2a9w",
+  "/func/mapable": "n98f51iebpig",
+  "/func/repeatable2": "naquefr9f8oa",
+  "/repeat-demo": "n1uymkjc0dq0i",
+  "/map-demo": "n3rrt0ysilc5",
+  "/func/fact": "ntjtptk8muja",
+  "/event/listen": "nwaqu1xcqgt",
+  "/context/fact": "nbr424iyl4ck",
+  "/context/better": "ndcpds1ufc9r",
+  "/context/bad": "n6latr4748ky",
+  "/event/emit": "nsfhqaccvf5l",
+  "/func/console": "ndkn7h3vafff",
+  "/samples/console": "ntus838dkb1j"
+}

@@ -37,7 +37,7 @@ platform.core.node({
 
     subscribe(inputs.channel, ({msgId, data}) => {
 
-      let params = {data}
+      let params = {channel: inputs.channel, data}
       
       for (let input of signature.inputs) {
         if (!(input in params))

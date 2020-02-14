@@ -1,0 +1,151 @@
+{
+  "path": "/func/repeatable2",
+  "method": "GET",
+  "public": false,
+  "in": [
+    "index",
+    "length"
+  ],
+  "out": [
+    "result"
+  ],
+  "configs": [],
+  "control": [],
+  "nodes": [
+    {
+      "tag": "e0",
+      "box": {
+        "left": 283,
+        "right": 455,
+        "top": 366,
+        "bottom": 470
+      },
+      "in": [
+        "index",
+        "length"
+      ],
+      "expr": "index >= length/2"
+    },
+    {
+      "tag": "s0",
+      "box": {
+        "left": 494,
+        "right": 638,
+        "top": 451,
+        "bottom": 592
+      },
+      "cases": [
+        "true",
+        "false"
+      ]
+    },
+    {
+      "tag": "e1",
+      "box": {
+        "left": 881,
+        "right": 1053,
+        "top": 113,
+        "bottom": 191
+      },
+      "in": [
+        "index"
+      ],
+      "expr": "-index"
+    },
+    {
+      "tag": "e2",
+      "box": {
+        "left": 884,
+        "right": 1056,
+        "top": 253,
+        "bottom": 331
+      },
+      "in": [
+        "index"
+      ],
+      "expr": "index*2"
+    }
+  ],
+  "links": [
+    [
+      {
+        "in": "index"
+      },
+      {
+        "e0": {
+          "in": "index"
+        }
+      }
+    ],
+    [
+      {
+        "in": "length"
+      },
+      {
+        "e0": {
+          "in": "length"
+        }
+      }
+    ],
+    [
+      {
+        "e0": "result"
+      },
+      {
+        "s0": "target"
+      }
+    ],
+    [
+      {
+        "s0": {
+          "case": "true"
+        }
+      },
+      "e1"
+    ],
+    [
+      {
+        "in": "index"
+      },
+      {
+        "e1": {
+          "in": "index"
+        }
+      }
+    ],
+    [
+      {
+        "in": "index"
+      },
+      {
+        "e2": {
+          "in": "index"
+        }
+      }
+    ],
+    [
+      {
+        "s0": {
+          "case": "false"
+        }
+      },
+      "e2"
+    ],
+    [
+      {
+        "e1": "result"
+      },
+      {
+        "out": "result"
+      }
+    ],
+    [
+      {
+        "e2": "result"
+      },
+      {
+        "out": "result"
+      }
+    ]
+  ]
+}

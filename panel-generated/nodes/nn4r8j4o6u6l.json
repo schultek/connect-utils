@@ -1,0 +1,110 @@
+{
+  "path": "/reduce-fact",
+  "method": "GET",
+  "public": false,
+  "in": [
+    "n"
+  ],
+  "out": [
+    "result"
+  ],
+  "configs": [],
+  "control": [],
+  "nodes": [
+    {
+      "tag": "c0",
+      "box": {
+        "left": 599,
+        "right": 841,
+        "top": 190,
+        "bottom": 372
+      },
+      "path": "/utils/reduce"
+    },
+    {
+      "tag": "e0",
+      "box": {
+        "left": 360,
+        "right": 532,
+        "top": 127,
+        "bottom": 205
+      },
+      "in": [
+        "n"
+      ],
+      "expr": "new Array(n)"
+    },
+    {
+      "tag": "v0",
+      "box": {
+        "left": 348,
+        "right": 520,
+        "top": 241,
+        "bottom": 241
+      },
+      "expr": "1"
+    },
+    {
+      "tag": "v1",
+      "box": {
+        "left": 346,
+        "right": 518,
+        "top": 304,
+        "bottom": 304
+      },
+      "expr": "\"/func/fact\""
+    }
+  ],
+  "links": [
+    [
+      {
+        "in": "n"
+      },
+      {
+        "e0": {
+          "in": "n"
+        }
+      }
+    ],
+    [
+      {
+        "e0": "result"
+      },
+      {
+        "c0": {
+          "in": "array"
+        }
+      }
+    ],
+    [
+      {
+        "v0": "result"
+      },
+      {
+        "c0": {
+          "in": "initial"
+        }
+      }
+    ],
+    [
+      {
+        "v1": "result"
+      },
+      {
+        "c0": {
+          "in": "path"
+        }
+      }
+    ],
+    [
+      {
+        "c0": {
+          "out": "result"
+        }
+      },
+      {
+        "out": "result"
+      }
+    ]
+  ]
+}

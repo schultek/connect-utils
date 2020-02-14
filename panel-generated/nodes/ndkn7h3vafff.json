@@ -1,0 +1,48 @@
+{
+  "path": "/func/console",
+  "method": "GET",
+  "public": false,
+  "in": [
+    "data"
+  ],
+  "out": [
+    "result"
+  ],
+  "configs": [],
+  "control": [],
+  "nodes": [
+    {
+      "tag": "e0",
+      "box": {
+        "left": 688,
+        "right": 860,
+        "top": 231,
+        "bottom": 309
+      },
+      "in": [
+        "event"
+      ],
+      "expr": "console.log(\"CONSOLE\", event)"
+    }
+  ],
+  "links": [
+    [
+      {
+        "in": "data"
+      },
+      {
+        "e0": {
+          "in": "event"
+        }
+      }
+    ],
+    [
+      {
+        "in": "data"
+      },
+      {
+        "out": "result"
+      }
+    ]
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "path": "/event/emit",
+  "method": "GET",
+  "public": false,
+  "in": [
+    "channel",
+    "data"
+  ],
+  "out": [
+    "response"
+  ],
+  "configs": [],
+  "control": [],
+  "nodes": [
+    {
+      "tag": "c0",
+      "box": {
+        "left": 493,
+        "right": 735,
+        "top": 115,
+        "bottom": 245
+      },
+      "path": "/utils/emit"
+    }
+  ],
+  "links": [
+    [
+      {
+        "in": "channel"
+      },
+      {
+        "c0": {
+          "in": "channel"
+        }
+      }
+    ],
+    [
+      {
+        "in": "data"
+      },
+      {
+        "c0": {
+          "in": "data"
+        }
+      }
+    ],
+    [
+      {
+        "c0": {
+          "out": "response"
+        }
+      },
+      {
+        "out": "response"
+      }
+    ]
+  ]
+}

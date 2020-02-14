@@ -1,0 +1,180 @@
+{
+  "path": "/context/fact",
+  "method": "GET",
+  "public": false,
+  "in": [
+    "n"
+  ],
+  "out": [
+    "result"
+  ],
+  "configs": [],
+  "control": [],
+  "nodes": [
+    {
+      "tag": "e0",
+      "box": {
+        "left": 323,
+        "right": 495,
+        "top": 125,
+        "bottom": 217
+      },
+      "in": [
+        "n"
+      ],
+      "expr": "new Array(n).fill(0).map((_, i) => i + 1);\n"
+    },
+    {
+      "tag": "c0",
+      "box": {
+        "left": 607,
+        "right": 849,
+        "top": 430,
+        "bottom": 560
+      },
+      "path": "#iterate"
+    },
+    {
+      "tag": "e1",
+      "box": {
+        "left": 625,
+        "right": 797,
+        "top": 209,
+        "bottom": 287
+      },
+      "in": [
+        "step"
+      ],
+      "expr": "step"
+    },
+    {
+      "tag": "e2",
+      "box": {
+        "left": 948,
+        "right": 1120,
+        "top": 400,
+        "bottom": 504
+      },
+      "in": [
+        "step",
+        "localcontext"
+      ],
+      "expr": "localcontext.result *= step.item;"
+    },
+    {
+      "tag": "v1",
+      "box": {
+        "left": 681,
+        "right": 853,
+        "top": 685,
+        "bottom": 685
+      },
+      "expr": "{result: 1}"
+    },
+    {
+      "tag": "e3",
+      "box": {
+        "left": 948,
+        "right": 1120,
+        "top": 572,
+        "bottom": 650
+      },
+      "in": [
+        "localcontext"
+      ],
+      "expr": "localcontext.result"
+    }
+  ],
+  "links": [
+    [
+      {
+        "e0": "result"
+      },
+      {
+        "c0": {
+          "in": "target"
+        }
+      }
+    ],
+    [
+      {
+        "c0": {
+          "out": "step"
+        }
+      },
+      {
+        "e1": {
+          "in": "step"
+        }
+      }
+    ],
+    [
+      {
+        "e1": "result"
+      },
+      {
+        "c0": {
+          "in": "target"
+        }
+      }
+    ],
+    [
+      {
+        "c0": {
+          "out": "step"
+        }
+      },
+      {
+        "e2": {
+          "in": "step"
+        }
+      }
+    ],
+    [
+      {
+        "in": "n"
+      },
+      {
+        "e0": {
+          "in": "n"
+        }
+      }
+    ],
+    [
+      {
+        "v1": "result"
+      },
+      {
+        "e2": {
+          "in": "localcontext"
+        }
+      }
+    ],
+    [
+      {
+        "v1": "result"
+      },
+      {
+        "e3": {
+          "in": "localcontext"
+        }
+      }
+    ],
+    [
+      {
+        "e3": "result"
+      },
+      {
+        "out": "result"
+      }
+    ],
+    [
+      {
+        "c0": {
+          "control": "finished"
+        }
+      },
+      "e3"
+    ]
+  ]
+}

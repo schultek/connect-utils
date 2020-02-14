@@ -1,0 +1,60 @@
+{
+  "path": "/func/fact",
+  "method": "GET",
+  "public": false,
+  "in": [
+    "i",
+    "acc"
+  ],
+  "out": [
+    "result"
+  ],
+  "configs": [],
+  "control": [],
+  "nodes": [
+    {
+      "tag": "e0",
+      "box": {
+        "left": 457,
+        "right": 629,
+        "top": 243,
+        "bottom": 347
+      },
+      "in": [
+        "i",
+        "acc"
+      ],
+      "expr": "acc * (i+1)"
+    }
+  ],
+  "links": [
+    [
+      {
+        "in": "i"
+      },
+      {
+        "e0": {
+          "in": "i"
+        }
+      }
+    ],
+    [
+      {
+        "in": "acc"
+      },
+      {
+        "e0": {
+          "in": "acc"
+        }
+      }
+    ],
+    [
+      {
+        "e0": "result"
+      },
+      {
+        "out": "result"
+      }
+    ]
+  ]
+}

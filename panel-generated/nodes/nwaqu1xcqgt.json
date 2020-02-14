@@ -1,0 +1,78 @@
+{
+  "path": "/event/listen",
+  "method": "GET",
+  "public": false,
+  "in": [
+    "channel"
+  ],
+  "out": [],
+  "configs": [],
+  "control": [
+    "non_existent_path",
+    "listening"
+  ],
+  "nodes": [
+    {
+      "tag": "c0",
+      "box": {
+        "left": 499,
+        "right": 741,
+        "top": 183,
+        "bottom": 339
+      },
+      "path": "/utils/listen"
+    },
+    {
+      "tag": "v0",
+      "box": {
+        "left": 294,
+        "right": 466,
+        "top": 247,
+        "bottom": 247
+      },
+      "expr": "\"/func/console\""
+    }
+  ],
+  "links": [
+    [
+      {
+        "v0": "result"
+      },
+      {
+        "c0": {
+          "in": "path"
+        }
+      }
+    ],
+    [
+      {
+        "c0": {
+          "control": "non_existent_path"
+        }
+      },
+      {
+        "out": "non_existent_path"
+      }
+    ],
+    [
+      {
+        "c0": {
+          "control": "listening"
+        }
+      },
+      {
+        "out": "listening"
+      }
+    ],
+    [
+      {
+        "in": "channel"
+      },
+      {
+        "c0": {
+          "in": "channel"
+        }
+      }
+    ]
+  ]
+}

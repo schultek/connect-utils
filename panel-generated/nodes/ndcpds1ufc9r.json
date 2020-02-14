@@ -1,0 +1,126 @@
+{
+  "path": "/context/better",
+  "method": "GET",
+  "public": false,
+  "in": [
+    "n"
+  ],
+  "out": [
+    "result"
+  ],
+  "configs": [],
+  "control": [],
+  "nodes": [
+    {
+      "tag": "c0",
+      "box": {
+        "left": 647,
+        "right": 889,
+        "top": 192,
+        "bottom": 296
+      },
+      "path": "/context/fact"
+    },
+    {
+      "tag": "e0",
+      "box": {
+        "left": 364,
+        "right": 536,
+        "top": 345,
+        "bottom": 423
+      },
+      "in": [
+        "n"
+      ],
+      "expr": "n+1"
+    },
+    {
+      "tag": "c1",
+      "box": {
+        "left": 609,
+        "right": 851,
+        "top": 419,
+        "bottom": 523
+      },
+      "path": "/context/fact"
+    },
+    {
+      "tag": "e1",
+      "box": {
+        "left": 1009,
+        "right": 1181,
+        "top": 310,
+        "bottom": 414
+      },
+      "in": [
+        "r1",
+        "r2"
+      ],
+      "expr": "{r1, r2}"
+    }
+  ],
+  "links": [
+    [
+      {
+        "in": "n"
+      },
+      {
+        "e0": {
+          "in": "n"
+        }
+      }
+    ],
+    [
+      {
+        "e0": "result"
+      },
+      {
+        "c1": {
+          "in": "n"
+        }
+      }
+    ],
+    [
+      {
+        "in": "n"
+      },
+      {
+        "c0": {
+          "in": "n"
+        }
+      }
+    ],
+    [
+      {
+        "e1": "result"
+      },
+      {
+        "out": "result"
+      }
+    ],
+    [
+      {
+        "c0": {
+          "out": "result"
+        }
+      },
+      {
+        "e1": {
+          "in": "r1"
+        }
+      }
+    ],
+    [
+      {
+        "c1": {
+          "out": "result"
+        }
+      },
+      {
+        "e1": {
+          "in": "r2"
+        }
+      }
+    ]
+  ]
+}
